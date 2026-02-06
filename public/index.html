@@ -462,7 +462,12 @@ const rolesConfig = [
 // ═══════════════════════════════════════════════════════
 // APP STATE
 // ═══════════════════════════════════════════════════════
-const socket = io();
+const socket = io(window.location.origin, {
+    transports: ['websocket', 'polling'],
+    reconnection: true,
+    reconnectionAttempts: 10,
+    reconnectionDelay: 1000
+});
 let currentRoom = '';
 let isModerator = false;
 let selectedRoles = {};   // { roleId: count }
