@@ -182,6 +182,6 @@ io.on('connection', (socket) => {
 
 // ─── Start Server ──────────────────────────────────────
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-    console.log(`🐺 Ma Sói server running at http://localhost:${PORT}`);
+server.listen(PORT, '0.0.0.0', () => {
+    console.log(`🐺 Ma Sói server running on port ${PORT}`);
 });
